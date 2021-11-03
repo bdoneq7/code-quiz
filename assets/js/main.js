@@ -14,7 +14,7 @@ var buttonEl = document.createElement("button");
 headerEl.textContent = "";
 headerHighScoreEl.textContent = "View High Scores";
 headerTimeEl.textContent = "Time: " + time + "";
-h1El.innerHTML = "Coding Quiz Challenge";
+h1El.innerHTML = "<h1>Coding Quiz Challenge</h1>";
 quizEl.innerHTML = "Try to answer the following code-related questions within the time limit.\r\n"; 
 quizEl.innerHTML += "Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
 buttonEl.innerHTML = "Start Quiz";
@@ -38,7 +38,7 @@ buttonEl.className = "button";
 
 // BeginQuiz Function
 var beginQuiz = function () {
-    h1El.innerHTML = "<h2>Question 1</h2>";
+    h1El.innerHTML = "<h2>Commonly used data types DO Not Include:</h2>";
     quizEl.innerHTML = "Commonly used data types DO Not Include:";
     
 };
