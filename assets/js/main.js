@@ -39,7 +39,39 @@ buttonEl.className = "button";
 // BeginQuiz Function
 var beginQuiz = function () {
     h1El.innerHTML = "<h2>Commonly used data types DO Not Include:</h2>";
-    quizEl.innerHTML = "Commonly used data types DO Not Include:";
+    quizEl.innerHTML = "";
+
+    var q1a1El = document.createElement("button");
+    q1a1El.innerHTML = "1. Strings";
+    quizEl.appendChild(q1a1El);
+    q1a1El.className = "answer";
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q1a2El = document.createElement("button");
+    q1a2El.innerHTML = "2. Booleans";
+    quizEl.appendChild(q1a2El);
+    q1a2El.className = "answer";
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q1a3El = document.createElement("button");
+    q1a3El.innerHTML = "3. Alerts";
+    quizEl.appendChild(q1a3El);
+    q1a3El.className = "answer";
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q1a4El = document.createElement("button");
+    q1a4El.innerHTML = "4. Numbers";
+    quizEl.appendChild(q1a4El);
+    q1a4El.className = "answer";
     
 };
 
