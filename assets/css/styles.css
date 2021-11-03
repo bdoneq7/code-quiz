@@ -91,4 +91,26 @@
   .answer:hover {
     background-color: #AF7AC5;
   }
+
+  .wrong {
+    margin:auto; 
+    margin-top: 20px; 
+    width:20%; 
+    text-align:left; 
+    height: 30px; 
+    color: #FE0703; 
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .correct {
+    margin:auto; 
+    margin-top: 20px; 
+    width:20%; 
+    text-align:left; 
+    height: 30px; 
+    color: #1A8310 ; 
+    font-size: 20px;
+    font-style: italic;
+  }
   
