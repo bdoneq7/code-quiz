@@ -43,5 +43,4 @@ var beginQuiz = function () {
     
 };
 
-
-buttonEl.onclick = beginQuiz();
+buttonEl.addEventListener("click", beginQuiz);
