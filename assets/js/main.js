@@ -43,8 +43,10 @@ var questionOne = function () {
     headerTimeEl.textContent = "Time: " + time + "";
 
     h1El.innerHTML = "<h2>Commonly used data types DO Not Include:</h2>";
+    h1El.className = "h1-questions";
     quizEl.innerHTML = "";
 
+    // create container for answer buttons and align left
     var q1A1El = document.createElement("button");
     q1A1El.innerHTML = "1. Strings";
     quizEl.appendChild(q1A1El);
@@ -79,36 +81,277 @@ var questionOne = function () {
     quizEl.appendChild(q1A4El);
     q1A4El.className = "answer";
     
-    q1A1El.addEventListener("click", wrongAnswer);
-    q1A2El.addEventListener("click", wrongAnswer);
-    q1A3El.addEventListener("click", correctAnswer);
-    q1A4El.addEventListener("click", wrongAnswer);
+    q1A1El.addEventListener("click", wrongAnswerQ1);
+    q1A2El.addEventListener("click", correctAnswerQ1);
+    q1A3El.addEventListener("click", wrongAnswerQ1);
+    q1A4El.addEventListener("click", wrongAnswerQ1);
     
 
 };
 
-// wrong alert function
 
-var wrongAnswer = function () {
-    time = time - 5;
+
+
+// questionTwo Function
+var questionTwo = function () {
+
+    headerTimeEl.textContent = "Time: " + time + "";
+
+    h1El.innerHTML = "<h2>The condition in an if/else statement is enclosed with ________.</h2>";
+    quizEl.innerHTML = "";
+
+    var q2A1El = document.createElement("button");
+    q2A1El.innerHTML = "1. Quotes";
+    quizEl.appendChild(q2A1El);
+    q2A1El.className = "answer";
+    
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q2A2El = document.createElement("button");
+    q2A2El.innerHTML = "2. Curly Brackets";
+    quizEl.appendChild(q2A2El);
+    q2A2El.className = "answer";
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q2A3El = document.createElement("button");
+    q2A3El.innerHTML = "3. Parenthesis";
+    quizEl.appendChild(q2A3El);
+    q2A3El.className = "answer";
+    
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q2A4El = document.createElement("button");
+    q2A4El.innerHTML = "4. Square Brackets";
+    quizEl.appendChild(q2A4El);
+    q2A4El.className = "answer";
+    
+    q2A1El.addEventListener("click", wrongAnswerQ2);
+    q2A2El.addEventListener("click", wrongAnswerQ2);
+    q2A3El.addEventListener("click", correctAnswerQ2);
+    q2A4El.addEventListener("click", wrongAnswerQ2);
+    
+
+};
+
+
+
+
+// questionThree Function
+var questionThree = function () {
+
+    headerTimeEl.textContent = "Time: " + time + "";
+
+    h1El.innerHTML = "<h2>Arrays in Javascript can be used to store ________.</h2>";
+    quizEl.innerHTML = "";
+
+    var q3A1El = document.createElement("button");
+    q3A1El.innerHTML = "1. Numbers and Strings";
+    quizEl.appendChild(q3A1El);
+    q3A1El.className = "answer";
+    
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q3A2El = document.createElement("button");
+    q3A2El.innerHTML = "2. Other Arrays";
+    quizEl.appendChild(q3A2El);
+    q3A2El.className = "answer";
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q3A3El = document.createElement("button");
+    q3A3El.innerHTML = "3. Booleans";
+    quizEl.appendChild(q3A3El);
+    q3A3El.className = "answer";
+    
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q3A4El = document.createElement("button");
+    q3A4El.innerHTML = "4. All of the Above";
+    quizEl.appendChild(q3A4El);
+    q3A4El.className = "answer";
+    
+    q3A1El.addEventListener("click", wrongAnswerQ3);
+    q3A2El.addEventListener("click", wrongAnswerQ3);
+    q3A3El.addEventListener("click", wrongAnswerQ3);
+    q3A4El.addEventListener("click", correctAnswerQ3);
+    
+
+};
+
+
+
+// questionFour Function
+var questionFour = function () {
+
+    headerTimeEl.textContent = "Time: " + time + "";
+
+    h1El.innerHTML = "<h2>String values must be enclosed within ________ when being assigned to variables.</h2>";
+    quizEl.innerHTML = "";
+
+    var q4A1El = document.createElement("button");
+    q4A1El.innerHTML = "1. Commas";
+    quizEl.appendChild(q4A1El);
+    q4A1El.className = "answer";
+    
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q4A2El = document.createElement("button");
+    q4A2El.innerHTML = "2. Curly Brackets";
+    quizEl.appendChild(q4A2El);
+    q4A2El.className = "answer";
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q4A3El = document.createElement("button");
+    q4A3El.innerHTML = "3. Quotes";
+    quizEl.appendChild(q4A3El);
+    q4A3El.className = "answer";
+    
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q4A4El = document.createElement("button");
+    q4A4El.innerHTML = "4. Parenthesis";
+    quizEl.appendChild(q4A4El);
+    q4A4El.className = "answer";
+    
+    q4A1El.addEventListener("click", wrongAnswerQ4);
+    q4A2El.addEventListener("click", correctAnswerQ4);
+    q4A3El.addEventListener("click", wrongAnswerQ4);
+    q4A4El.addEventListener("click", wrongAnswerQ4);
+    
+
+};
+
+
+
+
+
+// Question 1 Wrong function
+
+var wrongAnswerQ1 = function () {
+    time = time - 10;
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
-    // insert horizontal line
-    wrong.innerHTML = "Wrong!";
+    wrong.innerHTML = "<hr/> Wrong!";
     quizEl.appendChild(wrong);
     wrong.className = "wrong";
-    // call next question
+    setTimeout(questionTwo, 1000);
+    
 }
 
-// correct alert function
+// Question 1 Correct function
 
-var correctAnswer = function () {
-    // insert horizontal line
-    correct.innerHTML = "Correct!";
+var correctAnswerQ1 = function () {
+    var correct = document.createElement("div");
+    correct.innerHTML = "<hr/> Correct!";
     quizEl.appendChild(correct);
     correct.className = "correct";
-    // call next question
+    setTimeout(questionTwo, 1000);
+    
+}
+
+// Question 2 Wrong function
+
+var wrongAnswerQ2 = function () {
+    time = time - 10;
+    headerTimeEl.textContent = "Time: " + time + "";
+    
+    var wrong = document.createElement("div");
+    wrong.innerHTML = "<hr/> Wrong!";
+    quizEl.appendChild(wrong);
+    wrong.className = "wrong";
+    setTimeout(questionThree, 1000);
+    
+}
+
+// Question 2 Correct function
+
+var correctAnswerQ2 = function () {
+    var correct = document.createElement("div");
+    correct.innerHTML = "<hr/> Correct!";
+    quizEl.appendChild(correct);
+    correct.className = "correct";
+    setTimeout(questionThree, 1000);
+}
+
+// Question 3 Wrong function
+
+var wrongAnswerQ3 = function () {
+    time = time - 10;
+    headerTimeEl.textContent = "Time: " + time + "";
+    
+    var wrong = document.createElement("div");
+    wrong.innerHTML = "<hr/> Wrong!";
+    quizEl.appendChild(wrong);
+    wrong.className = "wrong";
+    setTimeout(questionFour, 1000);
+}
+
+// Question 3 Correct function
+
+var correctAnswerQ3 = function () {
+    var correct = document.createElement("div");
+    correct.innerHTML = "<hr/> Correct!";
+    quizEl.appendChild(correct);
+    correct.className = "correct";
+    setTimeout(questionFour, 1000);
+}
+
+
+// Question 4 Wrong function
+
+var wrongAnswerQ4 = function () {
+    time = time - 10;
+    headerTimeEl.textContent = "Time: " + time + "";
+    
+    var wrong = document.createElement("div");
+    wrong.innerHTML = "<hr/> Wrong!";
+    quizEl.appendChild(wrong);
+    wrong.className = "wrong";
+    setTimeout(questionFive, 1000);
+}
+
+// Question 4 Correct function
+
+var correctAnswerQ4 = function () {
+    var correct = document.createElement("div");
+    correct.innerHTML = "<hr/> Correct!";
+    quizEl.appendChild(correct);
+    correct.className = "correct";
+    setTimeout(questionFive, 1000);
 }
 
 buttonEl.addEventListener("click", questionOne);
+
+
+
+// show final score and get initials
+// Set Timer Object to Local Storage
+// localStorage.setItem('user', JSON.stringify(user));
+// var item = JSON.parse(localStorage.getItem(user));
