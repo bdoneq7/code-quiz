@@ -250,6 +250,59 @@ var questionFour = function () {
 
 
 
+// questionFive Function
+var questionFive = function () {
+
+    headerTimeEl.textContent = "Time: " + time + "";
+
+    h1El.innerHTML = "<h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>";
+    quizEl.innerHTML = "";
+
+    var q5A1El = document.createElement("button");
+    q5A1El.innerHTML = "1. JavaScript";
+    quizEl.appendChild(q5A1El);
+    q5A1El.className = "answer";
+    
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q5A2El = document.createElement("button");
+    q5A2El.innerHTML = "2. Terminal/Bash";
+    quizEl.appendChild(q5A2El);
+    q5A2El.className = "answer";
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q5A3El = document.createElement("button");
+    q5A3El.innerHTML = "3. For Loops";
+    quizEl.appendChild(q5A3El);
+    q5A3El.className = "answer";
+    
+    
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var q5A4El = document.createElement("button");
+    q5A4El.innerHTML = "4. Console.log";
+    quizEl.appendChild(q5A4El);
+    q5A4El.className = "answer";
+    
+    q5A1El.addEventListener("click", wrongAnswerQ5);
+    q5A2El.addEventListener("click", wrongAnswerQ5);
+    q5A3El.addEventListener("click", correctAnswerQ5);
+    q5A4El.addEventListener("click", wrongAnswerQ5);
+    
+
+};
+
+
+
+
 
 // Question 1 Wrong function
 
@@ -347,11 +400,56 @@ var correctAnswerQ4 = function () {
     setTimeout(questionFive, 1000);
 }
 
+// Question 5 Wrong function
+
+var wrongAnswerQ5 = function () {
+    time = time - 10;
+    headerTimeEl.textContent = "Time: " + time + "";
+    
+    var wrong = document.createElement("div");
+    wrong.innerHTML = "<hr/> Wrong!";
+    quizEl.appendChild(wrong);
+    wrong.className = "wrong";
+    setTimeout(gameOver, 1000);
+}
+
+var correctAnswerQ5 = function () {
+    var correct = document.createElement("div");
+    correct.innerHTML = "<hr/> Correct!";
+    quizEl.appendChild(correct);
+    correct.className = "correct";
+    setTimeout(gameOver, 1000);
+}
+
+
+
+// gameOver Function
+var gameOver = function () {
+
+    headerTimeEl.textContent = "Time: " + time + "";
+
+    h1El.innerHTML = "<h2>All done!</h2>";
+    quizEl.innerHTML = "Your final score is " + time + ".";
+    quizEl.className = "final-score";
+
+    var enterInitials = document.createElement("input");
+    enterInitials.innerHTML = "";
+    quizEl.appendChild(enterInitials);
+    enterInitials.className = "input";
+
+    var finalSubmit = document.createElement("button");
+    finalSubmit.innerHTML = "Submit";
+    quizEl.appendChild(finalSubmit);
+    finalSubmit.className = "button";
+    
+
+};
+
 buttonEl.addEventListener("click", questionOne);
 
 
 
-// show final score and get initials
+// show final score/time and get initials
 // Set Timer Object to Local Storage
 // localStorage.setItem('user', JSON.stringify(user));
 // var item = JSON.parse(localStorage.getItem(user));
