@@ -5,7 +5,7 @@ var stopTime = 0;
 // Create HTML Elements
 var body = document.body;
 var headerEl = document.createElement("div");
-var headerHighScoreEl = document.createElement("div");
+var headerHighScoreEl = document.createElement("button");
 var headerTimeEl = document.createElement("div");
 var h1El = document.createElement("h1");
 var quizEl = document.createElement("div");
@@ -31,7 +31,7 @@ quizEl.appendChild(buttonEl);
 
 // CSS Styles for HTML Elements
 headerEl.className = "header";
-headerHighScoreEl.className = "highscore";
+headerHighScoreEl.className = "button-long";
 headerTimeEl.className = "time";
 h1El.className = "h1";
 quizEl.className = "quiz-index";
@@ -542,6 +542,7 @@ var noScores = function () {
 
 
 buttonEl.addEventListener("click", questionOne);
+headerHighScoreEl.addEventListener("click", finalScore);
 
 
 
