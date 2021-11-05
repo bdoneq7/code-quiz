@@ -30,6 +30,10 @@
     color: #ffffff;
   }
 
+  h2 {
+    font-size: 30px;
+  }
+
   .highscore {
     flex: 1; 
     text-align: left; 
@@ -56,12 +60,32 @@
     margin: auto; 
     margin-bottom: 0; 
     margin-top: 30px; 
-    width:50%; 
+    width:60%; 
     text-align:left;
   }
   
   .quiz {
     white-space: pre-line; 
+    margin:auto;
+    margin-top: 0px; 
+    width:60%; 
+    text-align:left; 
+    height: 200px;
+    font-size: 20px;
+  }
+
+  .quiz-index {
+    white-space: pre-line; 
+    margin:auto;
+    margin-top: 0px; 
+    width:60%; 
+    text-align:center; 
+    height: 200px;
+    font-size: 20px;
+  }
+
+  .quiz-initials {
+    background-color: #E2E3E2 ;
     margin:auto;
     margin-top: 0px; 
     width:60%; 
@@ -81,6 +105,32 @@
     border: 2px solid #497980; 
     border-radius: 15px;
     font-size: 20px;
+  }
+
+  .button:hover { 
+    background-color: #497980; 
+    color: #ffffff; 
+    border: 2px solid #34495E; 
+
+  }
+
+  .button-long {
+    margin:auto; 
+    margin-top: 20px; 
+    width:25%; 
+    text-align:center; 
+    height: 30px; 
+    background-color: #34495E; 
+    color: #ffffff; 
+    border: 2px solid #497980; 
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .button-long:hover {
+    background-color: #497980; 
+    color: #ffffff; 
+    border: 2px solid #34495E; 
   }
 
   .answer {
@@ -104,7 +154,7 @@
   .wrong {
     margin:auto; 
     margin-top: 20px; 
-    width:20%; 
+    width:100%; 
     text-align:left; 
     height: 30px; 
     color: #FE0703; 
@@ -115,16 +165,12 @@
   .correct {
     margin:auto; 
     margin-top: 20px; 
-    width:20%; 
+    width:100%; 
     text-align:left; 
     height: 30px; 
     color: #1A8310 ; 
     font-size: 20px;
     font-style: italic;
-  }
-
-  .input {
-    display: flex;
   }
   
   .finalbutton { 
@@ -139,6 +185,13 @@
     font-size: 20px;
   }
 
+  .finalbutton:hover { 
+    background-color: #497980; 
+    color: #ffffff; 
+    border: 2px solid #34495E;
+
+  }
+
   .final-score { 
     margin:auto;
     margin-top: 0px; 
@@ -146,4 +199,41 @@
     text-align:left; 
     height: 200px;
     font-size: 20px;
+  }
+
+  .initial-text {
+    flex: 1; 
+    width: 16%;
+    text-align:left; 
+    color: #000000;
+    font-size:20px;
+  }
+
+  .input {
+    flex: 1; 
+    margin-right: 20px;
+    width: 30%; 
+    color: #000000;
+    font-size:20px;
+  }
+
+  .submit-button {
+    flex:1;
+    margin-top: 20px; 
+    width:15%; 
+    text-align:center; 
+    height: 30px; 
+    background-color: #34495E; 
+    color: #ffffff; 
+    border: 2px solid #497980; 
+    border-radius: 15px;
+    font-size: 20px;
+    
+  }
+
+  .submit-button:hover {
+    background-color: #497980; 
+    color: #ffffff; 
+    border: 2px solid #34495E;
+    
   }

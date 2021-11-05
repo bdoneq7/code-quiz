@@ -1,8 +1,10 @@
-// Global Variables
-var time = 0;
-var body = document.body;
+var time = 75;
+var stopTime = 0;
+
+
 
 // Create HTML Elements
+var body = document.body;
 var headerEl = document.createElement("div");
 var headerHighScoreEl = document.createElement("div");
 var headerTimeEl = document.createElement("div");
@@ -33,18 +35,35 @@ headerEl.className = "header";
 headerHighScoreEl.className = "highscore";
 headerTimeEl.className = "time";
 h1El.className = "h1";
-quizEl.className = "quiz";
+quizEl.className = "quiz-index";
 buttonEl.className = "button";
+
+
+// time function
+var timeTracker = setInterval(function() {
+    headerTimeEl.textContent = "Time: " + time + "";
+    if (time > 0 && stopTime == 0) {
+        time--;
+    } 
+    else {
+        clearInterval(timeTracker);
+        headerTimeEl.textContent = "";
+    }
+},1000);
+
 
 // questionOne Function
 var questionOne = function () {
 
-    time = 75;
+    
     headerTimeEl.textContent = "Time: " + time + "";
 
     h1El.innerHTML = "<h2>Commonly used data types DO Not Include:</h2>";
     h1El.className = "h1-questions";
     quizEl.innerHTML = "";
+    quizEl.className = "quiz";
+
+    
 
     // create container for answer buttons and align left
     var q1A1El = document.createElement("button");
@@ -99,6 +118,7 @@ var questionTwo = function () {
 
     h1El.innerHTML = "<h2>The condition in an if/else statement is enclosed with ________.</h2>";
     quizEl.innerHTML = "";
+    quizEl.className = "quiz";
 
     var q2A1El = document.createElement("button");
     q2A1El.innerHTML = "1. Quotes";
@@ -152,6 +172,7 @@ var questionThree = function () {
 
     h1El.innerHTML = "<h2>Arrays in Javascript can be used to store ________.</h2>";
     quizEl.innerHTML = "";
+    quizEl.className = "quiz";
 
     var q3A1El = document.createElement("button");
     q3A1El.innerHTML = "1. Numbers and Strings";
@@ -204,6 +225,7 @@ var questionFour = function () {
 
     h1El.innerHTML = "<h2>String values must be enclosed within ________ when being assigned to variables.</h2>";
     quizEl.innerHTML = "";
+    quizEl.className = "quiz";
 
     var q4A1El = document.createElement("button");
     q4A1El.innerHTML = "1. Commas";
@@ -257,6 +279,7 @@ var questionFive = function () {
 
     h1El.innerHTML = "<h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>";
     quizEl.innerHTML = "";
+    quizEl.className = "quiz";
 
     var q5A1El = document.createElement("button");
     q5A1El.innerHTML = "1. JavaScript";
@@ -302,12 +325,11 @@ var questionFive = function () {
 
 
 
-
-
 // Question 1 Wrong function
 
 var wrongAnswerQ1 = function () {
-    time = time - 10;
+    time = time -10
+
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
@@ -333,6 +355,7 @@ var correctAnswerQ1 = function () {
 
 var wrongAnswerQ2 = function () {
     time = time - 10;
+    
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
@@ -357,6 +380,7 @@ var correctAnswerQ2 = function () {
 
 var wrongAnswerQ3 = function () {
     time = time - 10;
+
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
@@ -381,6 +405,7 @@ var correctAnswerQ3 = function () {
 
 var wrongAnswerQ4 = function () {
     time = time - 10;
+
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
@@ -404,6 +429,7 @@ var correctAnswerQ4 = function () {
 
 var wrongAnswerQ5 = function () {
     time = time - 10;
+
     headerTimeEl.textContent = "Time: " + time + "";
     
     var wrong = document.createElement("div");
@@ -426,26 +452,91 @@ var correctAnswerQ5 = function () {
 // gameOver Function
 var gameOver = function () {
 
-    headerTimeEl.textContent = "Time: " + time + "";
+    stopTime = 1;
 
+    localStorage.setItem('time', (time));
+    localStorage.getItem(time);
+    headerTimeEl.textContent = "Time: " + time + "";
+    
     h1El.innerHTML = "<h2>All done!</h2>";
+
     quizEl.innerHTML = "Your final score is " + time + ".";
     quizEl.className = "final-score";
 
+    var initialText = document.createElement("div");
+    initialText.innerHTML = "<br/>Enter Initials:";
+    quizEl.appendChild(initialText);
+    initialText.className = "initial-text";
+
+
+
     var enterInitials = document.createElement("input");
-    enterInitials.innerHTML = "";
+    enterInitials.type = "text";
+    enterInitials.value = "";
     quizEl.appendChild(enterInitials);
     enterInitials.className = "input";
 
-    var finalSubmit = document.createElement("button");
-    finalSubmit.innerHTML = "Submit";
-    quizEl.appendChild(finalSubmit);
-    finalSubmit.className = "button";
+    var initialInput = enterInitials.value;
+    localStorage.setItem('initialInput', (initialInput));
     
+
+    var finalSubmitEl = document.createElement("button");
+    finalSubmitEl.innerHTML = "Submit";
+    finalSubmitEl.type = "submit";
+    quizEl.appendChild(finalSubmitEl);
+    finalSubmitEl.className = "submit-button";
+    
+
+    finalSubmitEl.addEventListener("click", finalScore);
 
 };
 
+
+// high score function
+
+var finalScore = function(initialInput) {
+
+    localStorage.getItem(time);
+    localStorage.getItem(initialInput);
+
+    h1El.innerHTML = "<h2>High Scores</h2>";
+
+    quizEl.innerHTML = "1. " + initialInput + " - " + time;
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+    
+
+    var goBackEl = document.createElement("button");
+    goBackEl.textContent = "Go Back";
+    goBackEl.type = "submit";
+    quizEl.appendChild(goBackEl);
+    goBackEl.className = "button";
+
+    var space = document.createElement("div");
+    space.innerHTML ="";
+    quizEl.appendChild(space);
+
+    var clearScoresEl = document.createElement("button");
+    clearScoresEl.textContent = "Clear High Scores";
+    clearScoresEl.type = "submit";
+    quizEl.appendChild(clearScoresEl);
+    clearScoresEl.className = "button-long";
+
+   
+    
+    
+
+}
+
+
+
 buttonEl.addEventListener("click", questionOne);
+
+
+
+
 
 
 
