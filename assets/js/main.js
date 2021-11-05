@@ -2,7 +2,6 @@ var time = 75;
 var stopTime = 0;
 
 
-
 // Create HTML Elements
 var body = document.body;
 var headerEl = document.createElement("div");
@@ -15,7 +14,7 @@ var buttonEl = document.createElement("button");
 // Generate HTML Element Content
 headerEl.textContent = "";
 headerHighScoreEl.textContent = "View High Scores";
-headerTimeEl.textContent = "Time: " + time + "";
+headerTimeEl.textContent = "Time: " + time;
 h1El.innerHTML = "<h1>Coding Quiz Challenge</h1>";
 quizEl.innerHTML = "Try to answer the following code-related questions within the time limit.\r\n"; 
 quizEl.innerHTML += "Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
@@ -55,7 +54,7 @@ var timeTracker = setInterval(function() {
 // questionOne Function
 var questionOne = function () {
 
-    
+    startTime = 1;
     headerTimeEl.textContent = "Time: " + time + "";
 
     h1El.innerHTML = "<h2>Commonly used data types DO Not Include:</h2>";
@@ -524,11 +523,21 @@ var finalScore = function(initialInput) {
     quizEl.appendChild(clearScoresEl);
     clearScoresEl.className = "button-long";
 
-   
-    
-    
+    goBackEl.addEventListener("click", restart);
+    clearScoresEl.addEventListener("click", noScores);
 
-}
+
+};
+
+var restart = function () {
+    gameOver();
+};
+
+var noScores = function () {
+    h1El.innerHTML = "<h2>High Scores Cleared</h2>";
+
+    quizEl.innerHTML = "";
+};
 
 
 
