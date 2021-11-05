@@ -2,16 +2,22 @@
     box-sizing: border-box;
   }
   
+  /* Set CSS Colors */
   :root {
-    --primary: #44e9ff;
-    --secondary: #497980;
-    --tertiary: rgb(192, 246, 253);
     --white: #ffffff;
+    --lightgray: #ededed;
+    --red: #FE0703;
+    --green: #1A8310;
+    --pink: #AF7AC5;
+    --gray: #8ca2a5;
+    --darkblue: #497980;
+    --darkerblue: #34495E;
     --black: #000000;
   }
   
+  /* Body Style */
   body {
-    background: #ededed;
+    background: var(--lightgray);
     color: var(--black);
     margin: 0;
     padding: 0;
@@ -21,13 +27,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
+  /* Header Styles */
   .header {
     display: flex; 
     width: 100%; 
     padding: 30px 25px; 
-    background-color: #34495E; 
-    border-bottom: 5px solid #497980; 
-    color: #ffffff;
+    background-color: var(--darkerblue); 
+    border-bottom: 5px solid var(--darkblue); 
+    color: var(--white);
   }
 
   h2 {
@@ -37,14 +44,14 @@
   .highscore {
     flex: 1; 
     text-align: left; 
-    color: #ffffff;
+    color: var(--white);
     font-size: 20px;
   }
 
   .time {
     flex: 1; 
     text-align:right; 
-    color: #ffffff;
+    color: var(--white);
     font-size:20px;
   }
 
@@ -64,6 +71,7 @@
     text-align:left;
   }
   
+  /* Quiz Styles */
   .quiz {
     white-space: pre-line; 
     margin:auto;
@@ -85,7 +93,7 @@
   }
 
   .quiz-initials {
-    background-color: #E2E3E2 ;
+    background-color: var(--lightgray) ;
     margin:auto;
     margin-top: 0px; 
     width:60%; 
@@ -94,23 +102,24 @@
     font-size: 20px;
   }
 
+  /* Button Styles */
   .button {
     margin:auto; 
     margin-top: 20px; 
     width:15%; 
     text-align:center; 
     height: 30px; 
-    background-color: #34495E; 
-    color: #ffffff; 
-    border: 2px solid #497980; 
+    background-color: var(--darkerblue); 
+    color: var(--white); 
+    border: 2px solid var(--gray); 
     border-radius: 15px;
     font-size: 20px;
   }
 
   .button:hover { 
-    background-color: #497980; 
-    color: #ffffff; 
-    border: 2px solid #34495E; 
+    background-color: var(--darkblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkerblue); 
 
   }
 
@@ -120,35 +129,76 @@
     width:25%; 
     text-align:center; 
     height: 30px; 
-    background-color: #34495E; 
-    color: #ffffff; 
-    border: 2px solid #497980; 
+    background-color: var(--darkerblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkblue); 
     border-radius: 15px;
     font-size: 20px;
   }
 
   .button-long:hover {
-    background-color: #497980; 
-    color: #ffffff; 
-    border: 2px solid #34495E; 
+    background-color: var(--darkblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkerblue); 
   }
 
+  .finalbutton { 
+    margin-top: 20px; 
+    width:15%; 
+    text-align:center; 
+    height: 30px; 
+    background-color: var(--darkerblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkblue); 
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .finalbutton:hover { 
+    background-color: var(--darkblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkerblue);
+
+  }
+
+  .submit-button {
+    flex:1;
+    margin-top: 20px; 
+    width:15%; 
+    text-align:center; 
+    height: 30px; 
+    background-color: var(--darkerblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkblue); 
+    border-radius: 15px;
+    font-size: 20px;
+    
+  }
+
+  .submit-button:hover {
+    background-color: var(--darkblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkerblue);
+    
+  }
+
+  /* Answer Styles */
   .answer {
     margin:auto; 
     margin-top: 20px; 
     width:25%; 
     text-align:left; 
     height: 30px; 
-    background-color: #34495E; 
-    color: #ffffff; 
-    border: 2px solid #497980; 
+    background-color: var(--darkerblue); 
+    color: var(--white); 
+    border: 2px solid var(--darkblue); 
     border-radius: 5px;
     font-size: 20px;
   }
 
   .answer:hover {
-    background-color: #AF7AC5;
-    color: #000000;
+    background-color: var(--pink);
+    color: var(--black);
   }
 
   .wrong {
@@ -157,7 +207,7 @@
     width:100%; 
     text-align:left; 
     height: 30px; 
-    color: #FE0703; 
+    color: var(--red); 
     font-size: 20px;
     font-style: italic;
   }
@@ -168,30 +218,12 @@
     width:100%; 
     text-align:left; 
     height: 30px; 
-    color: #1A8310 ; 
+    color: var(--green); 
     font-size: 20px;
     font-style: italic;
   }
   
-  .finalbutton { 
-    margin-top: 20px; 
-    width:15%; 
-    text-align:center; 
-    height: 30px; 
-    background-color: #34495E; 
-    color: #ffffff; 
-    border: 2px solid #497980; 
-    border-radius: 15px;
-    font-size: 20px;
-  }
-
-  .finalbutton:hover { 
-    background-color: #497980; 
-    color: #ffffff; 
-    border: 2px solid #34495E;
-
-  }
-
+/* Utility Styles */
   .final-score { 
     margin:auto;
     margin-top: 0px; 
@@ -205,7 +237,7 @@
     flex: 1; 
     width: 16%;
     text-align:left; 
-    color: #000000;
+    color: var(--black);
     font-size:20px;
   }
 
@@ -213,27 +245,8 @@
     flex: 1; 
     margin-right: 20px;
     width: 30%; 
-    color: #000000;
+    color: var(--black);
     font-size:20px;
   }
 
-  .submit-button {
-    flex:1;
-    margin-top: 20px; 
-    width:15%; 
-    text-align:center; 
-    height: 30px; 
-    background-color: #34495E; 
-    color: #ffffff; 
-    border: 2px solid #497980; 
-    border-radius: 15px;
-    font-size: 20px;
-    
-  }
-
-  .submit-button:hover {
-    background-color: #497980; 
-    color: #ffffff; 
-    border: 2px solid #34495E;
-    
-  }
+  

@@ -551,6 +551,6 @@ headerHighScoreEl.addEventListener("click", finalScore);
 
 
 // show final score/time and get initials
-// Set Timer Object to Local Storage
+
 // localStorage.setItem('user', JSON.stringify(user));
 // var item = JSON.parse(localStorage.getItem(user));
