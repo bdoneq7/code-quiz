@@ -467,40 +467,51 @@ var gameOver = function () {
     quizEl.appendChild(initialText);
     initialText.className = "initial-text";
 
-
-
+    // Input Element - Set to Local Storage
     var enterInitials = document.createElement("input");
-    enterInitials.type = "text";
-    enterInitials.value = "";
     quizEl.appendChild(enterInitials);
     enterInitials.className = "input";
+    enterInitials.type ="text";
+    enterInitials.value = "";
+    myValue = document.querySelector(".input");
 
-    var initialInput = enterInitials.value;
-    localStorage.setItem('initialInput', (initialInput));
+    // localStorage.setItem('enterInitials', (enterInitials.value));
+    // console.log(enterInitials.value);
     
-
+    // Button Element
     var finalSubmitEl = document.createElement("button");
     finalSubmitEl.innerHTML = "Submit";
     finalSubmitEl.type = "submit";
     quizEl.appendChild(finalSubmitEl);
     finalSubmitEl.className = "submit-button";
     
-
+    // Button event listener
     finalSubmitEl.addEventListener("click", finalScore);
 
 };
 
+var myValue;
+
 
 // high score function
 
-var finalScore = function(initialInput) {
+var finalScore = function() {
 
+    console.log({myValue});
+    console.log(myValue.value);
+    localStorage.setItem('enterInitials', (myValue.value));
+    
+    // Retrieve Time Score
     localStorage.getItem(time);
-    localStorage.getItem(initialInput);
+
+    // Retrieve EnterInitials value from Local Storage
+    var finalInput = localStorage.getItem('enterInitials');
+    console.log(finalInput);
 
     h1El.innerHTML = "<h2>High Scores</h2>";
 
-    quizEl.innerHTML = "1. " + initialInput + " - " + time;
+    // Display FinalInput for Initials and Time Score
+    quizEl.innerHTML = "1. " + finalInput + " - " + time;
 
     var space = document.createElement("div");
     space.innerHTML ="";
